@@ -18,11 +18,11 @@ public class ProvinciaService {
     public Provincia createProvincia (Provincia provincia) {
         return provinciaRepository.save(provincia);
     }
-
+    @Transactional(readOnly = true)
     public Provincia readProvincia (Long id) {
         return provinciaRepository.findById(id).get();
     }
-
+    @Transactional(readOnly = true)
     public List<Provincia> readAllProvincias () {
         return provinciaRepository.findAll();
     }
